@@ -19,3 +19,6 @@ tooling:
     npm:
       service: node
       cmd: npm
+    npx:
+      service: node
+      cmd: npx
