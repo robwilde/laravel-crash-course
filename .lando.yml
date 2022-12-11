@@ -1,0 +1,21 @@
+name: posty
+recipe: laravel
+config:
+  webroot: public
+  via: nginx
+  php: "8.0"
+  database: postgres
+services:
+    appserver:
+        composer:
+            phpunit/phpunit: ^9
+    node:
+        type: node:16
+tooling:
+    phpunit:
+        service: appserver
+        description: Run PHP Unit tests in Laravel
+        cmd: php vendor/bin/phpunit
+    npm:
+      service: node
+      cmd: npm
